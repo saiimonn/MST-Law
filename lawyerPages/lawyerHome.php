@@ -30,7 +30,7 @@ $updateStatus->execute();
     <?php include_once("../includedFiles/header.php")?>
     <main class="dashboard">
         <header>
-            <h3>Welcome, <?php echo htmlspecialchars($_SESSION["user_name"]); ?></h3>
+            <h3 class = "text-xl font-bold">Welcome, <?php echo htmlspecialchars($_SESSION["user_name"]); ?></h3>
             <nav class="right">
                 <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
                 <span id="session">AM</span>
@@ -39,8 +39,8 @@ $updateStatus->execute();
 
         <section class="dashboard-content">
             <div class="quick-actions">
-                <h2>Quick Actions</h2>
-                <p>Manage your cases and appointments</p>
+                <h2 class = "text-lg font-semibold">Quick Actions</h2>
+                <p class = "text-md text-gray-600">Manage your cases and appointments</p>
                 <div class="quick-actions-box">
                     <button class="btn-primary" onclick="location.href='cases.php'">View Cases</button>
                     <button class="btn-secondary" onclick="location.href='scheduleAppointment.php'">Schedule Appointment</button>
