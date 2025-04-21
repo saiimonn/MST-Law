@@ -11,8 +11,7 @@ try {
 
     // Check if all required fields are set
     if (empty($_POST["attorney"]) || empty($_POST["date"]) || 
-        empty($_POST["start_time"]) || empty($_POST["end_time"]) || 
-        empty($_POST["description"])) {
+        empty($_POST["start_time"]) || empty($_POST["end_time"])) {
         throw new Exception("All fields are required!");
     }
 
