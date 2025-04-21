@@ -1,5 +1,5 @@
 <?php
-$is_development = true;
+$is_development = false;
 
 if ($is_development) {
     define('DB_SERVER', 'localhost');
