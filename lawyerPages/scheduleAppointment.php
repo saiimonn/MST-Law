@@ -75,8 +75,8 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <div class="form-group">
-                <label for = "description">Appointment Details</label>
-                <textarea name="description" required rows="4" required></textarea>
+                <label for = "description">Appointment Details (optional)</label>
+                <textarea name="description" required rows="4"></textarea>
             </div>
 
             <input type = "hidden" name = "attorney_id" value = "<?php echo $_SESSION['user_id']; ?>"/>

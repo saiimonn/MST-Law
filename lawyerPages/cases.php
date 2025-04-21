@@ -62,11 +62,11 @@ require_once("../logins/dbcon.php");
                         <div class="grid grid-cols-2 gap-4">
                             <div class="space-y-2">
                                 <label class="block text-gray-700 mb-2">Case Number</label>
-                                <input name="case_number" type="text" class="w-full border rounded-md p-2" placeholder="e.g, 2023-0157" required>
+                                <input name="case_number" type="text" class="w-full border rounded-md p-2" placeholder="e.g, 2023-0157" autocomplete = "off" required>
                             </div>
                             <div class="space-y-2">
                                 <label class="block text-gray-700 mb-2">Client</label>
-                                <input name="client_name" type="text" class="w-full border rounded-md p-2" placeholder="Client name" required>
+                                <input name="client_name" type="text" class="w-full border rounded-md p-2" placeholder="Client name" autocomplete = "off" required>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-4">

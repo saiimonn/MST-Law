@@ -71,8 +71,8 @@ $lawyers = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <div class="form-group">
-                <label>Case Description</label>
-                <textarea name="description" required rows="4"></textarea>
+                <label>Case Description (optional)</label>
+                <textarea name="description" rows="4"></textarea>
             </div>
 
             <div class="form-group">
