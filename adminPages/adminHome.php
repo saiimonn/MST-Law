@@ -21,7 +21,7 @@ if (!isset($_SESSION["user_name"])) {
 
     <main class="dashboard">
         <header>
-            <h3>Welcome, <?php echo $_SESSION["user_name"];?></h3>
+            <h3 class = "text-xl font-bold">Welcome, <?php echo $_SESSION["user_name"];?></h3>
 
             <nav class = "right">
                 <span id = "hours">00</span>
@@ -36,8 +36,8 @@ if (!isset($_SESSION["user_name"])) {
         <section class="dashboard-content">
             
             <div class="quick-actions">
-                <h2>Quick Actions</h2>
-                <p>Manage users and view reports</p>
+                <h2 class = "text-lg font-semibold">Quick Actions</h2>
+                <p class = "text-md text-gray-500">Manage users and view reports</p>
                 <div class="quick-actions-box">
                 <button class="btn-primary" onclick = "location.href='addUserForm.php'">Add User</button>
                 <button class="btn-secondary" onclick = "location.href='userStatus.php'">Users</button>
