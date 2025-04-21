@@ -1,6 +1,6 @@
 # ⚖️ MST Law – Legal Management System
 
-A comprehensive web-based system designed to streamline case tracking, appointments, and task management for law firms. Built using **PHP**, **MySQL**, **JavaScript**, and **Tailwind CSS** with a focus on usability and efficiency.
+A comprehensive web-based system designed to streamline case tracking, appointments, and task management for Monteclar, Sibi, and Trinidad Law Firm.
 
 
 ## 🚀 Features
