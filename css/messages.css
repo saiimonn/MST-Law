@@ -1,0 +1,246 @@
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.messages-header {
+    padding: 10px;
+    background-color: #252627;
+    color: white;
+    text-align: center;
+}
+
+.messages-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.message p {
+    margin: 0;
+}
+
+.message span {
+    display: block;
+    font-size: 0.8em;
+    color: gray;
+    text-align: right;
+}
+
+.messages-footer {
+    padding: 10px;
+    background-color: #252627;
+}
+
+.messages-footer form {
+    display: flex;
+}
+
+.messages-footer textarea {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.messages-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f0f2f5;
+    height: 400px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.message {
+    max-width: 60%;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    position: relative;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.message.sent {
+    background: #0084ff;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.message.received {
+    background: #e4e6eb;
+    color: black;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+}
+
+.message-time {
+    font-size: 0.7em;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #e4e6eb;
+    gap: 10px;
+}
+
+.chat-input textarea {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #e4e6eb;
+    border-radius: 20px;
+    resize: none;
+    font-family: inherit;
+    line-height: 1.4;
+    max-height: 100px;
+}
+
+.chat-input button {
+    background: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.chat-input button:hover {
+    background: #0073df;
+}
+
+/* Scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+    border-radius: 4px;
+}
+
+/* Message bubble tail */
+.message.sent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    background: #0084ff;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.message.received::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    background: #e4e6eb;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.attorney-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.attorney-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.attorney-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.attorney-info h4 {
+    margin: 0;
+    color: #333;
+}
+
+.attorney-info p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.chat-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.chat-button:hover {
+    background: #0056b3;
+}
+
+.back-button {
+    background: #f8f9fa;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

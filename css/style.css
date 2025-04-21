@@ -1,0 +1,570 @@
+/*HEADER, CONTAINER, NAVBAR CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 30px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #212529;
+}
+
+header {
+    /* position: absolute;
+    top: 0; */
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 50px;
+}
+
+.textMarginBottom {
+    margin-bottom: 0.625rem;
+}
+
+.textMarginTop {
+    margin-top: 0.625rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 0.6rem;
+}
+
+.containerFlex {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right {
+    margin-right: 0.625rem;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.6rem;
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.3125rem;
+    position: relative;
+    display: inline-block;
+}
+
+a::after, 
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background: black;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+a::before {
+    transform-origin: left;
+    top: -5px;
+}
+
+a:hover::after, a:hover::before {
+    transform: scaleX(1);
+}
+
+a.no-hover::after, 
+a.no-hover::before {
+    content: none;
+}
+
+.register {
+    background-color: black;
+    color: white;
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+    margin-right: 10px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #212529;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 0 1rem;
+        position: relative;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .left, .right {
+        position: fixed;
+        left: -100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .left {
+        top: 60px;
+        padding: 20px 0;
+        gap: 15px;
+        height: auto;
+    }
+
+    .right {
+        bottom: 0;
+        padding: 15px 0;
+        gap: 10px;
+        background: #f8f9fa;
+    }
+
+    .left.active, .right.active {
+        left: 0;
+    }
+
+    .left a, .right a {
+        display: block;
+        width: 90%;
+        padding: 12px;
+        margin: 0;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .left a:hover, .right a:hover {
+        background-color: #f8f9fa;
+    }
+
+    .right a:last-child {
+        border-bottom: none;
+    }
+
+    a::after, a::before {
+        display: none;
+    }
+
+    .register {
+        background-color: #212529;
+        margin: 5px auto;
+    }
+
+    .containerFlex {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .box {
+        width: 90%;
+        margin: 10px;
+    }
+
+    .attorneyContainer {
+        height: auto;
+        padding: 10px;
+    }
+
+    .containerAbsolute .card {
+        width: 90%;
+        height: 500px;
+        margin: 10px;
+    }
+
+    .contactContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contactForm, .officeLoc, .contactInfo, .businessHours {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .faq-container {
+        width: 90%;
+        height: auto;
+        margin: 10px;
+    }
+
+    .containerSpaceBetween {
+        padding: 10px;
+        height: auto;
+    }
+
+    .faq-box {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    html, body {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html, body {
+        font-size: 20px;
+    }
+
+    .containerAbsolute .card {
+        height: 400px;
+    }
+
+    .containerAbsolute .card .icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .containerAbsolute .card .slide.slide2 h3 {
+        font-size: 20px;
+    }
+
+    .containerAbsolute .card .slide.slide2 p {
+        font-size: 14px;
+    }
+}
+
+/*FAQ CSS STARTS HERE*/
+
+.containerSpaceBetween {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; 
+    align-items: center; */
+    padding: 20px;
+    max-width: 100%;
+    height: 100dvh; /* Takes full screen height */
+}
+
+.faq-box {
+    flex: 1; /* Makes each box take equal space */
+    min-width: 300px; /* Ensures it doesn't get too small */
+    max-width: 450px; /* Limits max width */
+    background: #E9ECEF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-box h4 {
+    margin-bottom: 10px;
+}
+
+.faq-container {
+    background: #E9ECEF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    height: 10.5rem;
+    width: 100%;
+}
+
+.faq-item {
+    border-left: 4px solid red;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.faq-question {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.faq-answer {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    color: #777;
+}
+
+
+.question-icon, .answer-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: red;  
+}
+.answer-icon {
+    color: gray;  
+}
+
+/*"ABOUT" CSS STARTS HERE*/
+
+.box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #E9EcEf;
+    margin: 20px;
+}
+
+/* ATTORNEYS PAGE CSS STARTS HERE */
+
+.attorneyContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 90vh;
+    font-family: "Arial", sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 20px;
+    
+}
+
+.containerAbsolute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.containerAbsolute .card {
+    position: relative;
+    width: 500px;
+    height: 600px; 
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.containerAbsolute .card .slide.slide1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /*Changeable*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #212121;
+    z-index: 1;
+    transition: 0.7s ease-in-out;
+    transform: translateY(80px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.containerAbsolute .card:hover .slide.slide1 {
+    transform: translateY(0);
+}
+
+.containerAbsolute .card .slide.slide2 {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    height: 60%; /*Changeable*/
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+    transform: translateY(-80px);
+    transition: 0.7s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.containerAbsolute .card:hover .slide.slide2 {
+    transform: translateY(0);
+}
+
+.containerAbsolute .card .icon {
+    width: 150px; 
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 5px solid white;
+}
+
+.containerAbsolute .card .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.containerAbsolute .card .slide.slide2 h3 {
+    font-size: 26px; 
+    color: #2c73df;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.containerAbsolute .card .slide.slide2 p {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.containerAbsolute .card .slide.slide2 .education {
+    font-size: 16px;
+    font-style: italic;
+    color: #777;
+    margin-top: 10px;
+}
+
+.containerAbsolute .card .slide.slide2 .experience {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/*CONTACTS PAGE CSS STARTS HERE*/
+
+.contactContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 34px;
+    padding: 20px;
+}
+
+.contactForm, .officeLoc, .contactInfo, .businessHours {
+    background: #E9ECEF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contactForm h2, .officeLoc h2, .contactInfo h2, .businessHours h2 {
+    margin-bottom: 10px;
+    font-size: 1.0rem;
+}
+
+.contactForm {
+    grid-column: span 2 / span 2;
+    grid-row: span 6 / span 6;
+}
+
+.officeLoc {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+}
+
+.contactInfo {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.businessHours {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 5;
+}
+
+.contentArea {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

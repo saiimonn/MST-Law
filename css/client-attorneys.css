@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lawyerContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.infoBox {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+    border-left: 4px solid #007bff;
+}
+
+.infoBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.attyImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.boxContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.content.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.content.column {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.content.column button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+.content.column button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .lawyerContent {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}
+
+.attorney-info {
+    margin: 15px 0;
+}
+
+.attorney-info h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.attorney-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.lawyer-info {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.lawyer-info h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.lawyer-info p {
+    margin: 3px 0;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.label {
+    font-weight: bold;
+}

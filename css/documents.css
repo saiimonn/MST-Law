@@ -1,0 +1,97 @@
+.documents-container {
+    padding: 20px;
+    max-width: 100%;
+}
+.appointment-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    flex-direction: column;
+}
+.appointment-details {
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+.appointment-details p {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+.appointment-details strong {
+    display: inline-block;
+    width: 140px;
+    color: #555;
+}
+.documents-list {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    align-self: flex-start;
+    width: 100%;
+}
+.documents-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.documents-header h5 {
+    margin: 0;
+    color: #333;
+}
+.document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+.upload-form {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+.upload-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.download-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+.file-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.no-documents {
+    font-style: italic;
+    color: #666;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
