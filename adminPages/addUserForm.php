@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                         <div class="space-y-2">
                             <label for="name" class="text-sm font-medium leading-none">Full Name</label>
-                            <input name="name" type="text" placeholder="John Doe" class="flex h-10 w-full rounded-md border border-gray-300 bg-inherit px-3 py-2 text-sm ring-offset-inherit" required>
+                            <input name="name" type="text" placeholder="John Doe" class="flex h-10 w-full rounded-md border border-gray-300 bg-inherit px-3 py-2 text-sm ring-offset-inherit" autocomplete = "off" required>
                         </div>
                         <div class="space-y-2">
                             <label for="gender" class="text-sm font-medium leading-none">Gender</label>
@@ -96,12 +96,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="space-y-2">
                         <label for="email" class="text-sm font-medium leading-none">Email</label>
-                        <input type="email" name="email" class="flex h-10 w-full rounded-md border border-gray-300 bg-inherit px-3 py-2 text-sm ring-offset-inherit" autocomplete="off" placeholder="john.doe@example.com" required>
+                        <input type="email" name="email" class="flex h-10 w-full rounded-md border border-gray-300 bg-inherit px-3 py-2 text-sm ring-offset-inherit" autocomplete="off" placeholder="john.doe@example.com" autocomplete = "off" required>
                     </div>
 
                     <div class="space-y-2">
                         <label for="password" class="text-sm font-medium leading-none">Password</label>
-                        <input type="password" name="password" class="flex h-10 w-full rounded-md border border-gray-300 bg-inherit px-3 py-2 text-sm ring-offset-inherit" autocomplete="off" placeholder="*********" required>
+                        <input type="password" name="password" class="flex h-10 w-full rounded-md border border-gray-300 bg-inherit px-3 py-2 text-sm ring-offset-inherit" autocomplete="off" placeholder="*********" autocomplete = "off" required>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
