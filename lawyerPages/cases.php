@@ -197,7 +197,6 @@ require_once("../logins/dbcon.php");
                         <th class="p-2 md:p-4 text-gray-500 font-medium">Client</th>
                         <th class="hidden sm:table-cell p-2 md:p-4 text-gray-500 font-medium">Type</th>
                         <th class="hidden md:table-cell p-2 md:p-4 text-gray-500 font-medium">Filing Date</th>
-                        <th class="hidden md:table-cell p-2 md:p-4 text-gray-500 font-medium">Closing Date</th>
                         <th class="p-2 md:p-4 text-gray-500 font-medium">Actions</th>
                     </tr>
                 </thead>
@@ -209,7 +208,6 @@ require_once("../logins/dbcon.php");
                                 <td class="p-2 md:p-4"><?php echo htmlspecialchars($row['client_name']); ?></td>
                                 <td class="hidden sm:table-cell p-2 md:p-4"><?php echo htmlspecialchars($row['type']); ?></td>
                                 <td class="hidden md:table-cell p-2 md:p-4"><?php echo htmlspecialchars($row['filing_date']); ?></td>
-                                <td class="hidden md:table-cell p-2 md:p-4"><?php echo htmlspecialchars($row['closing_date']); ?></td>
                                 <td class="p-2 md:p-4">
                                     <!-- Actions -->
                                     <div = "relative inline-block text-left">
