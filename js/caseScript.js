@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var query = this.value;
 
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/FinalProject/lawyerPages/searchCase.php?q=' + encodeURIComponent(query), true);
+            xhr.open('GET', 'https://mstlaw.dcism.org/lawyerPages/searchCase.php?q=' + encodeURIComponent(query), true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     try {

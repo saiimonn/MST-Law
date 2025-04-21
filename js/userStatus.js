@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('input', function() {
             var query = this.value;
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/FinalProject/adminPages/searchUsers.php?q=' + encodeURIComponent(query), true);
+            xhr.open('GET', 'https://mstlaw.dcism.org/adminPages/searchUsers.php?q=' + encodeURIComponent(query), true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     console.log(xhr.responseText); // Add this line
