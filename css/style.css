@@ -180,7 +180,7 @@ a.no-hover::before {
         top: 60px;
         padding: 20px 0;
         gap: 15px;
-        height: auto;
+        height: 450px;
     }
 
     .right {
