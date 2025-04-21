@@ -2,16 +2,8 @@
 <head>
     <title>Attorneys</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    <link rel = "stylesheet" href = "css/attorneys.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-
-        crossorigin="anonymous">
-
-    <style>
-
-    </style>
-
 </head>
 <body>
 
@@ -35,42 +27,41 @@
       </nav>
     </header>
 
-    <div class="responsive-container-block outer-container">
-        <div class="responsive-container-block inner-container">
-          <p class="text-blk section-head-text">
-            Meet Our Expert Instructors
-          </p>
-          <p class="text-blk section-subhead-text">
-            Trusted, experienced, and dedicated--our legal team is committed to delivering exceptional legal services tailored to your needs.
-          </p>
-          <div class="responsive-container-block">
-
-            <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-              <div class="team-card">
-                <div class="img-wrapper">
-                  <img class="team-img" src="pics/alex.jpeg">
-                </div>
-                <p class="text-blk name">
-                  Alex L. Monteclar
-                </p>
-              </div>
+    <!-- Replace the container block below -->
+    <div class="py-12 px-4 min-h-screen bg-gray-50">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Meet Our Attorneys</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Our trusted, experienced, and dedicated legal team is committed to delivering exceptional legal services tailored to your needs.
+        </p>
+      </div>
+      <div class="mt-8">
+        <div class="flex flex-wrap justify-center gap-12">
+          <!-- Attorney Card 1 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 w-64">
+            <div class="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-gray-100 shadow-md">
+              <img src="pics/alex.jpeg" alt="Alex L. Monteclar" class="object-cover w-full h-full">
             </div>
-
-            <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
-              <div class="team-card">
-                <div class="img-wrapper">
-                  <img class="team-img" src="pics/alan.jpeg">
-                </div>
-                <p class="text-blk name">
-                  Alan C. Trinidad
-                </p>
-              </div>
-            </div>
-            
-            
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Alex L. Monteclar</h3>
+            <div class="w-12 h-0.5 bg-blue-500 mb-3"></div>
+            <p class="text-gray-500 font-medium mb-3">Senior Attorney</p>
+            <p class="text-gray-600 text-sm text-center mb-4">Specializing in corporate law with over 15 years of experience.</p>
           </div>
+          <!-- Attorney Card 2 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 w-64">
+            <div class="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-gray-100 shadow-md">
+              <img src="pics/alan.jpeg" alt="Alan C. Trinidad" class="object-cover w-full h-full">
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Alan C. Trinidad</h3>
+            <div class="w-12 h-0.5 bg-blue-500 mb-3"></div>
+            <p class="text-gray-500 font-medium mb-3">Senior Attorney</p>
+            <p class="text-gray-600 text-sm text-center mb-4">Expert in litigation with a strong track record of successful cases.</p>
+          </div>
+          <!-- Add more attorney cards here as needed -->
         </div>
       </div>
+    </div>
+    <!-- End Tailwind container block -->
     <script src = "js/infoPageMenuToggle.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ if(isset($_SESSION['user_id'])) {
                     <?php
                     if(isset($_SESSION['status'])) {
                         $status_class = strpos($_SESSION['status'], 'success') !== false ? 'success' : 'error';
-                        echo '<div class="alert ' . $status_class . '">' . $_SESSION['status'] . '</div>';
+                        echo '<div class="alert success' . $status_class . '">' . $_SESSION['status'] . '</div>';
                         unset($_SESSION['status']);
                     }
                     ?>
