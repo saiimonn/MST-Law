@@ -19,16 +19,7 @@ try {
     $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
 
-    $phoneQuery = "SELECT phone 
-                    FROM users
-                    WHERE id = ?";
-    $stmt = $conn->prepare($phoneQuery);
-    $stmt->execute([$client_id]);
-    $phone = $stmt->fetchColumn();
 
-    if(!$phone) {
-        throw new Exception("Client does not have a phone number on file!");
-    }
 
     $currDate = date('Y-m-d');
     if($date < $currDate) {
@@ -53,11 +44,12 @@ try {
         throw new Exception("Time slot conflicts with existing appointment!");
     }
 
-    $insertSQL = "INSERT INTO appointments (user_id, attorney_id, date, start_time, end_time, status, phone, description)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    // Remove phone from insert
+    $insertSQL = "INSERT INTO appointments (user_id, attorney_id, date, start_time, end_time, status, description)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($insertSQL);
-    $stmt->execute([$client_id, $attorney_id, $date, $start_time, $end_time, $status, $phone, $description]);
+    $stmt->execute([$client_id, $attorney_id, $date, $start_time, $end_time, $status, $description]);
 
     $conn->commit();
     $_SESSION['success'] = "Appointment scheduled successfully!";

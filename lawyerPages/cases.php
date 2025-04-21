@@ -104,21 +104,19 @@ require_once("../logins/dbcon.php");
             </div>
         </div>
     
-        <!-- Searchbar with responsive width -->
          <div class="relative w-full">
-            <input id="caseSearch" type="search" placeholder="Search case by Case Number" class="w-full border border-gray-300 p-3 pl-10 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"/>
+            <input id="caseSearch" type="search" placeholder="Search by client name" class="w-full border border-gray-300 p-3 pl-10 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"/>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
          </div>
 
-         <!-- Open/Closed cases buttons - make responsive -->
          <div class="flex space-x-4 bg-gray-100 w-full sm:w-fit p-1 rounded-md overflow-x-auto">
             <button onclick="showOpenCases()" id="openCasesBtn" class="px-4 py-2 bg-white rounded-md font-medium text-black whitespace-nowrap cursor-pointer">Open Cases</button>
             <button onclick="showClosedCases()" id="closedCasesBtn" class="px-4 py-2 bg-gray-200 rounded-md font-medium text-gray-600 whitespace-nowrap cursor-pointer">Closed Cases</button>
          </div>
 
-         <!-- Cases Tables - make responsive -->
+         <!-- Cases Tables -->
          <div class="overflow-x-auto">
             <!-- Open Cases Table -->
             <?php 
@@ -131,7 +129,7 @@ require_once("../logins/dbcon.php");
             $stmt->execute();
             $result = $stmt->get_result();
             ?>
-            <div id="openCasesTable" class="rounded-lg overflow-hidden border border-gray-200">
+            <div id="openCasesTable" class="hidden rounded-lg overflow-hidden border border-gray-200">
               <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="border-b border-gray-200">
@@ -144,7 +142,6 @@ require_once("../logins/dbcon.php");
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- PHP for 'open' cases - update cell padding -->
                     <?php if($result->num_rows > 0): ?>
                         <?php while($row = $result->fetch_assoc()): ?>
                             <tr class="border-b border-gray-200 hover:bg-gray-50">
@@ -192,7 +189,7 @@ require_once("../logins/dbcon.php");
             $result = $stmt->get_result(); 
             ?>
 
-            <div id="closedCasesTable" class="rounded-lg overflow-hidden border border-gray-200 hidden">
+            <div id="closedCasesTable" class="rounded-lg overflow-hidden border border-gray-200">
               <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="border-b border-gray-200">
@@ -205,7 +202,6 @@ require_once("../logins/dbcon.php");
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- PHP code for closed cases - update cell padding -->
                      <?php if($result->num_rows > 0): ?>
                         <?php while($row = $result->fetch_assoc()): ?>
                             <tr class="border-b border-gray-200 hover:bg-gray-50">

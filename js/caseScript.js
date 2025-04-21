@@ -1,15 +1,15 @@
 function showOpenCases() {
-    document.getElementById('openCasesTable').classList.remove('hidden');
-    document.getElementById('closedCasesTable').classList.add('hidden');
-    document.getElementById('openCasesBtn').classList.re.gemove('bg-gray-200', 'text-gray-600');
+    document.getElementById('openCasesTable').classList.toggle('hidden');
+    document.getElementById('closedCasesTable').classList.toggle('hidden');
+    document.getElementById('openCasesBtn').classList.remove('bg-gray-200', 'text-gray-600');
     document.getElementById('openCasesBtn').classList.add('bg-white', 'text-black');
     document.getElementById('closedCasesBtn').classList.remove('bg-white', 'text-black');
     document.getElementById('closedCasesBtn').classList.add('bg-gray-200', 'text-gray-600');
 }
 
 function showClosedCases() {
-    document.getElementById('openCasesTable').classList.add('hidden');
-    document.getElementById('closedCasesTable').classList.remove('hidden');
+    document.getElementById('openCasesTable').classList.toggle('hidden');
+    document.getElementById('closedCasesTable').classList.toggle('hidden');
     document.getElementById('closedCasesBtn').classList.remove('bg-gray-200', 'text-gray-600');
     document.getElementById('closedCasesBtn').classList.add('bg-white', 'text-black');
     document.getElementById('openCasesBtn').classList.remove('bg-white', 'text-black');
@@ -24,11 +24,9 @@ function closeModal() {
     document.getElementById('newCaseModal').classList.toggle('hidden');
 }
 
-// Set initial state when page loads
 document.addEventListener('DOMContentLoaded', function() {
     showOpenCases();
     
-    // Add event listener to the form
     const form = document.getElementById('addCaseForm');
     if (form) {
         form.addEventListener('submit', function(e) {
@@ -66,41 +64,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function toggleDropdown(id, event) {
-    // If event is passed, prevent default behavior
     if (event) {
         event.stopPropagation();
     }
     
     const dropdown = document.getElementById(`dropdown-${id}`);
     
-    // Add transition classes if they don't exist
     if (!dropdown.classList.contains('transition-all')) {
         dropdown.classList.add('transition-all', 'duration-200', 'ease-in-out', 'transform');
     }
     
-    // Toggle between hidden/visible with animation
     if (dropdown.classList.contains('hidden')) {
         dropdown.classList.remove('hidden');
         dropdown.classList.add('opacity-0', 'scale-95');
         
-        // Force a reflow to ensure the transition works
         dropdown.offsetHeight;
         
-        // Show with animation
         dropdown.classList.remove('opacity-0', 'scale-95');
         dropdown.classList.add('opacity-100', 'scale-100');
     } else {
-        // Hide with animation
         dropdown.classList.remove('opacity-100', 'scale-100');
         dropdown.classList.add('opacity-0', 'scale-95');
         
-        // After animation completes, add hidden class
         setTimeout(() => {
             dropdown.classList.add('hidden');
-        }, 200); // Match this with the duration-200 class
+        }, 200);
     }
     
-    // Close other open dropdowns
     document.querySelectorAll('[id^="dropdown-"]').forEach(el => {
         if (el.id !== `dropdown-${id}` && !el.classList.contains('hidden')) {
             el.classList.remove('opacity-100', 'scale-100');
@@ -112,7 +102,6 @@ function toggleDropdown(id, event) {
         }
     });
     
-    // Close dropdown when clicking outside
     document.addEventListener('click', function closeDropdown(e) {
         if (!e.target.closest(`#dropdown-${id}`) && !e.target.closest(`button[onclick="toggleDropdown(${id})"]`)) {
             dropdown.classList.remove('opacity-100', 'scale-100');
@@ -125,3 +114,38 @@ function toggleDropdown(id, event) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // AJAX search by client name
+    var searchInput = document.querySelector('input[placeholder="Search by client name"]');
+    var openCasesTableBody = document.querySelector('#openCasesTable tbody');
+    var closedCasesTableBody = document.querySelector('#closedCasesTable tbody');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            var query = this.value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/FinalProject/lawyerPages/searchCase.php?q=' + encodeURIComponent(query), true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        var data = JSON.parse(xhr.responseText);
+                        if (openCasesTableBody && typeof data.open !== "undefined") {
+                            openCasesTableBody.innerHTML = data.open;
+                        }
+                        if (closedCasesTableBody && typeof data.closed !== "undefined") {
+                            closedCasesTableBody.innerHTML = data.closed;
+                        }
+                    } catch (e) {
+                        // fallback: just update open cases
+                        if (openCasesTableBody) {
+                            openCasesTableBody.innerHTML = xhr.responseText;
+                        }
+                    }
+                }
+            };
+            xhr.send();
+        });
+    }
+});

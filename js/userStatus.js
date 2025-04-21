@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle role change
     document.addEventListener('change', function(e) {
         if (e.target.classList.contains('role-select')) {
             var userId = e.target.getAttribute('data-user-id');
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
-                        // Optionally show a success message
+                        
                     } else {
                         alert('Failed to update role');
                     }
