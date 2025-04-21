@@ -23,6 +23,7 @@ $updateStatus->execute();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel = "stylesheet" href = "../css/messages.css">
+    <link rel = "stylesheet" href = "../css/output.css">
 </head>
 <body>
 
@@ -108,7 +109,6 @@ $updateStatus->execute();
                             <p>👤 Appointment with <?php echo $title . ' ' . htmlspecialchars($row['client_name']); ?></p>
                             <p>📅 <?php echo $row['date']; ?> | ⏰ <?php echo date("h:i A", strtotime($row['start_time'])); ?> - <?php echo date("h:i A", strtotime($row['end_time'])); ?></p>
                             <div class="buttons">
-                                <button class="btn-secondary">Reschedule</button>
                                 <button class="btn-danger" onclick="location.href='../includes/cancel_appointment.php?appointment_id=<?php echo $row['id']; ?>'">Cancel</button>
                             </div>
                         </div>
@@ -165,5 +165,6 @@ $updateStatus->execute();
     <script src="../js/calendar.js"></script>
     <script src="../js/clock.js"></script>
     <script src="../js/appointmentTabs.js"></script>
+    <script src = "../js/reschedModal.js"></script>
 </body>
 </html>

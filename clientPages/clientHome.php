@@ -113,7 +113,6 @@
                         <p>👤 Appointment with Atty. <?php echo htmlspecialchars($row['attorney_name']); ?></p>
                         <p>📅 <?php echo $row['date']; ?> | ⏰ <?php echo date("h:i A", strtotime($row['start_time'])); ?> - <?php echo date("h:i A", strtotime($row['end_time'])); ?></p>
                         <div class="buttons">
-                            <button class="btn-secondary">Reschedule</button>
                             <button class="btn-danger" onclick="location.href='../includes/cancel_appointment.php?appointment_id=<?php echo $row['id']; ?>'">Cancel</button>
                         </div>
                     </div>

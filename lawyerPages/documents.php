@@ -96,7 +96,7 @@ foreach($results as $row) {
                         <div class = "appointment-details">
                             <p><strong>Appointment ID: </strong> <?php echo htmlspecialchars($appointment['id']); ?></p>
                             <p><strong>Client: </strong> <?php echo htmlspecialchars($appointment['client_name']); ?></p>
-                            <p><strong>Date & Time: </strong> <?php echo htmlspecialchars(date('F j, Y h: i A', strtotime($appointment['appointment_date']))); ?></p>
+                            <p><strong>Date: </strong> <?php echo htmlspecialchars(date('F j, Y', strtotime($appointment['appointment_date']))); ?></p>
                             <p><strong>Description: </strong> <?php echo htmlspecialchars($appointment['description']); ?></p>
                         </div>
                         <div class = "documents-list">
