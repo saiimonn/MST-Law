@@ -24,18 +24,12 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Prepare email
-$to = 'gementizasgg08@gmail.com'; // <-- Change this to your desired recipient
-$email_subject = "Contact Form: $subject";
-$email_body = "You have received a new message from the contact form:\n\n"
-    . "Name: $name\n"
-    . "Email: $email\n"
-    . "Subject: $subject\n"
-    . "Message:\n$message\n";
-$headers = "From: $email\r\nReply-To: $email\r\n";
+// Use PHPMailer via email_config.php
+require_once __DIR__ . '/email_config.php';
 
-// Send email
-if (mail($to, $email_subject, $email_body, $headers)) {
+$fullMessage = "Subject: $subject\n\n$message";
+
+if (sendEmail($name, $email, $fullMessage)) {
     echo json_encode(['status' => 'success']);
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Failed to send email.']);

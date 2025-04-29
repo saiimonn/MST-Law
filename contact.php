@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>MST LAW</title>
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,22 +69,32 @@
     document.querySelector('#contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const formData = new FormData(this);
-      fetch('includes/send_contact_email.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          alert('Message sent successfully!');
-          document.querySelector('#contact-form').reset();
-        } else {
-          alert(data.message ? data.message : 'Failed to send message. Please try again.');
-        }
-      })
-      .catch(error => {
-        alert('An error occurred. Please try again.');
-      });
+      fetch('https://mstlaw.dcism.org/includes/send_contact_email.php', {
+  method: 'POST',
+  body: formData
+})
+.then(async response => {
+  console.log('Raw response:', response);
+  const text = await response.text();
+  console.log('Raw text response:', text);
+  try {
+    const data = JSON.parse(text);
+    console.log('Parsed response:', data);
+    if (data.status === 'success') {
+      alert('Message sent successfully!');
+      document.querySelector('#contact-form').reset();
+    } else {
+      alert(data.message || 'Failed to send message. Please try again.');
+    }
+  } catch (err) {
+    console.error('JSON parse error:', err);
+    alert('Server returned invalid JSON. Check console for details.');
+  }
+})
+.catch(error => {
+  console.error('Network or Fetch Error:', error);
+  alert('A network error occurred. See console.');
+});
     });
   </script>
 </body>
