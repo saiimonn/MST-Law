@@ -27,7 +27,7 @@ $clients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clients</title>
+    <title>MST LAW</title>
     <link rel = "stylesheet" href = "../css/home.css">
     <link rel = "stylesheet" href = "../css/client-attorneys.css">
 </head>

@@ -50,7 +50,7 @@ $clientResult = $clientStmt->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedules</title>
+    <title>MST LAW</title>
     <link rel="stylesheet" href="../css/output.css">
 </head>
 <body class="flex flex-col min-h-screen bg-white py-4 px-2 sm:px-6 md:px-12 lg:px-32" style="font-family: 'Inter', sans-serif;">

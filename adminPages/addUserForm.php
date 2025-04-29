@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a User</title>
+    <title>MST LAW</title>
     <link rel = "stylesheet" href = "../css/output.css">
 </head>
 <body class="flex flex-col bg-white px-4 py-6 sm:px-8 md:px-16 lg:px-48 xl:px-64 min-h-screen">

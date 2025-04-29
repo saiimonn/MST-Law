@@ -23,7 +23,7 @@ require_once("../logins/dbcon.php");
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cases</title>
+    <title>MST LAW</title>
     <link rel = "stylesheet" href = "../css/output.css">
 </head>
 <body class="flex justify-center min-h-screen bg-white p-4 md:p-10">
