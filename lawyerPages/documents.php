@@ -117,7 +117,7 @@ foreach($results as $row) {
                                     </div>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <p class="no-documents">No documents uploaded yet.</p>
+                                <p class="no-documents">No documents uploaded</p>
                             <?php endif; ?>
                         </div>
                     </div>
