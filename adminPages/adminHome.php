@@ -104,7 +104,9 @@ if (!isset($_SESSION["user_name"])) {
                         </div>
                     <?php endwhile; ?>
                 <?php else: ?>
-                    <p>No upcoming appointments.</p>
+                    <div class = "appointment-card">
+                        <p>No upcoming appointments.</p>
+                    </div>
                 <?php endif; ?>
             </div>
 
@@ -129,13 +131,15 @@ if (!isset($_SESSION["user_name"])) {
                             <p><?php echo htmlspecialchars($row['client_name']); ?> with Attorney <?php echo htmlspecialchars($row['attorney_name']); ?></p>
                             <p><?php echo $row['date']; ?> |⏰ <?php echo date("h:i A", strtotime($row['start_time'])); ?> - <?php echo date("h:i A", strtotime($row['end_time'])); ?></p>
                             <div class="buttons">
-                                <button class="btn-success" onclick="location.href='../includes/approve_appointment.php?appointment_id=<?php echo $row['id']; ?>'">Approve</button>
-                                <button class="btn-danger" onclick="location.href='../includes/cancel_appointment.php?appointment_id=<?php echo $row['id'];?>'">Reject</button>
+                                <button class="btn-success" onclick="location.href='../includes/handle_appointment_request.php?appointment_id=<?php echo $row['id']; ?>&action=confirmed'">Approve</button>
+                                <button class="btn-danger" onclick="location.href='../includes/handle_appointment_request.php?appointment_id=<?php echo $row['id'];?>&action=rejected'">Reject</button>
                             </div>
                         </div>
                     <?php endwhile; ?>
                 <?php else: ?>
-                    <p>No pending requests.</p>
+                    <div class = "appointment-card">
+                        <p>No pending requests.</p>
+                    </div>
                 <?php endif; ?>
             </div>
         </section>

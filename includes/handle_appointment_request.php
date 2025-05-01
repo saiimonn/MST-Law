@@ -19,14 +19,17 @@ if (isset($_GET['appointment_id']) && isset($_GET['action'])) {
     // Set the status based on action
     $status = ($action === 'confirmed') ? 'confirmed' : 'rejected';
 
-    // Update query - check against attorney_id instead of user_id
-    $query = "UPDATE appointments 
-              SET status = ? 
-              WHERE id = ? 
-              AND attorney_id = ?";
-              
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("sii", $status, $appointment_id, $attorney_id);
+    // Allow admin to approve/reject any appointment
+    if ($_SESSION['user_role'] == 'admin') {
+        $query = "UPDATE appointments SET status = ? WHERE id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("si", $status, $appointment_id);
+    } else {
+        // Only allow lawyers to update their own appointments
+        $query = "UPDATE appointments SET status = ? WHERE id = ? AND attorney_id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("sii", $status, $appointment_id, $attorney_id);
+    }
 
     if ($stmt->execute()) {
         error_log("Update successful. New status: " . $status);
@@ -39,6 +42,11 @@ if (isset($_GET['appointment_id']) && isset($_GET['action'])) {
     $_SESSION['status'] = "Invalid request parameters";
 }
 
-header("Location: ../lawyerPages/lawyerHome.php");
-exit();
+if($_SESSION['user_role'] == 'lawyer') {
+    header("Location: ../lawyerPages/lawyerHome.php");
+    exit();
+} elseif($_SESSION['user_role'] == 'admin') {
+    header("Location: ../adminPages/adminHome.php");
+    exit();
+}
 ?>

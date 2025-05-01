@@ -25,8 +25,6 @@ function renderCases($conn, $lawyer_id, $q, $status) {
             $rows .= '<td class="hidden md:table-cell p-2 md:p-4">' . htmlspecialchars($row['filing_date']) . '</td>';
             if ($status === 'open') {
                 $rows .= '<td class="hidden md:table-cell p-2 md:p-4">' . htmlspecialchars($row['next_hearing']) . '</td>';
-            } else {
-                $rows .= '<td class="hidden md:table-cell p-2 md:p-4">' . htmlspecialchars($row['closing_date']) . '</td>';
             }
             $rows .= '<td class="p-2 md:p-4">';
             $rows .= '<div class="relative inline-block text-left">';
