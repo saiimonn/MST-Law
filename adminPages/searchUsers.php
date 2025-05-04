@@ -4,9 +4,9 @@ require_once("../logins/dbcon.php");
 
 $search = isset($_GET['q']) ? trim($_GET['q']) : '';
 
-$sql = "SELECT * FROM users WHERE (role = 'lawyer' OR role = 'client')";
+$sql = "SELECT * FROM users";
 if ($search !== '') {
-    $sql .= " AND name LIKE ?";
+    $sql .= " WHERE name LIKE ?";
 }
 
 $stmt = $conn->prepare($sql);
