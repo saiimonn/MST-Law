@@ -7,7 +7,7 @@ if (isset($_GET['appointment_id'])) {
     $user_id = $_SESSION['user_id'];
 
     // Allow admin to cancel any appointment
-    if ($_SESSION['user_role'] == 'admin') {
+    if ($_SESSION['user_role'] == 'admin' || $_SESSION['user_role'] == 'lawyer') {
         $query = "UPDATE appointments SET status = 'cancelled' WHERE id = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("i", $appointment_id);
